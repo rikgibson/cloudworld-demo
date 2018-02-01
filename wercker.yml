@@ -25,6 +25,12 @@ build:
         code: |
           echo 'Copying output...'; sleep 2
 
+deploy-wls-domain:
+  steps:
+    - script:
+      code: |
+          echo 'Copying to WLS domain...'; sleep 3
+
 push-image:
   steps:
     - script:
@@ -33,13 +39,19 @@ push-image:
 
     - script:
       code: |
-          echo 'Pushing to registry...'; sleep 5
+          echo 'Pushing to registry...'; sleep 4
 
 deploy-staging:
   steps:
     - script:
       code: |
-          echo 'Deploying to staging K8S cluster...'; sleep 5
+          echo 'Deploying to staging cluster...'; sleep 5
+
+deploy-mysql:
+  steps:
+    - script:
+      code: |
+          echo 'Deploying MySQL to staging cluster...'; sleep 5
 
 integration-test:
   steps:
@@ -51,4 +63,4 @@ deploy-production:
   steps:
     - script:
       code: |
-          echo 'Deploying to production K8S cluster...'; sleep 5
+          echo 'Deploying to production cluster...'; sleep 5
