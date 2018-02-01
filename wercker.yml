@@ -13,12 +13,12 @@ build:
     - script:
         name: test
         code: |
-          echo 'Running unit tests...'; sleep 5
+          echo 'Running unit tests...'; sleep 2
 
     - script:
         name: package
         code: |
-          echo 'Building libraries...'; sleep 3
+          echo 'Building libraries...'; sleep 2
 
     - script:
         name: output
@@ -29,7 +29,7 @@ deploy-wls-domain:
   steps:
     - script:
       code: |
-          echo 'Copying to WLS domain...'; sleep 3
+          echo 'Copying to WLS domain...'; sleep 2
 
 push-image:
   steps:
