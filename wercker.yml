@@ -45,13 +45,31 @@ deploy-staging:
   steps:
     - script:
       code: |
-          echo 'Deploying to staging cluster...'; sleep 5
+          echo 'Deploying to staging cluster...'; sleep 1
+
+deploy-ui:
+  steps:
+    - script:
+      code: |
+          echo 'Deploying UI application to cluster...'; sleep 3
+
+deploy-api:
+  steps:
+    - script:
+      code: |
+          echo 'Deploying API microservice to cluster...'; sleep 5
 
 deploy-mysql:
   steps:
     - script:
       code: |
-          echo 'Deploying MySQL to staging cluster...'; sleep 5
+          echo 'Deploying MySQL to cluster...'; sleep 5
+
+uodate-schema:
+  steps:
+    - script:
+      code: |
+          echo 'Updating MySQL with latest schema...'; sleep 3
 
 integration-test:
   steps:
