@@ -18,18 +18,18 @@ build:
     - script:
         name: package
         code: |
-          echo 'Building libraries...'; sleep 5
+          echo 'Building libraries...'; sleep 3
 
     - script:
         name: output
         code: |
-          echo 'Copying output...'; sleep 5
+          echo 'Copying output...'; sleep 2
 
-build-image:
+push-image:
   steps:
     - script:
       code: |
-          echo 'Preparing artifacts...'; sleep 5
+          echo 'Preparing artifacts...'; sleep 2
 
     - script:
       code: |
@@ -45,7 +45,7 @@ integration-test:
   steps:
     - script:
       code: |
-          echo 'Running integration tests...'; sleep 5
+          echo 'Running integration tests...'; sleep 10
 
 deploy-production:
   steps:
