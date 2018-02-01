@@ -1,0 +1,54 @@
+box:
+  id: rikgibson/weblogic
+  ports:
+    - "8080"
+
+build:
+  steps:
+    - script:
+        name: compile
+        code: |
+          echo 'Compiling...'; sleep 5
+
+    - script:
+        name: test
+        code: |
+          echo 'Running unit tests...'; sleep 5
+
+    - script:
+        name: package
+        code: |
+          echo 'Building libraries...'; sleep 5
+
+    - script:
+        name: output
+        code: |
+          echo 'Copying output...'; sleep 5
+
+build-image:
+  steps:
+    - script:
+      code: |
+          echo 'Preparing artifacts...'; sleep 5
+
+    - script:
+      code: |
+          echo 'Pushing to registry...'; sleep 5
+
+deploy-staging:
+  steps:
+    - script:
+      code: |
+          echo 'Deploying to staging K8S cluster...'; sleep 5
+
+integration-test:
+  steps:
+    - script:
+      code: |
+          echo 'Running integration tests...'; sleep 5
+
+deploy-production:
+  steps:
+    - script:
+      code: |
+          echo 'Deploying to production K8S cluster...'; sleep 5
