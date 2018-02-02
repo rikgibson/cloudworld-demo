@@ -65,7 +65,7 @@ deploy-mysql:
       code: |
           echo 'Deploying MySQL to cluster...'; sleep 5
 
-uodate-schema:
+update-schema:
   steps:
     - script:
       code: |
